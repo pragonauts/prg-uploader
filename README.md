@@ -23,7 +23,7 @@ app.post('/', (req, res) => {
     uploader.addFile('image', terminateStream, '1mb', [
         'image/gif',
         'image/jpeg',
-        'image/png
+        'image/png'
     ]);
 
     uploader.process(req)
@@ -123,7 +123,7 @@ module.exports = app;
 <a name="Uploader"></a>
 
 ## Uploader
-**Kind**: global class  
+**Kind**: global class
 
 * [Uploader](#Uploader)
     * [new Uploader()](#new_Uploader_new)
@@ -144,7 +144,7 @@ The NodeJs multipart/form-data processor
 ### uploader.addFile(field, [processor], [maxLength], [allowedMimes]) ⇒ <code>this</code>
 Add a file upload
 
-**Kind**: instance method of <code>[Uploader](#Uploader)</code>  
+**Kind**: instance method of <code>[Uploader](#Uploader)</code>
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -153,7 +153,7 @@ Add a file upload
 | [maxLength] | <code>number</code> | <code></code> | size limit |
 | [allowedMimes] | <code>Array.&lt;string&gt;</code> | <code></code> | accept only theese mime types (strings or RegExps) |
 
-**Example**  
+**Example**
 ```javascript
 // process upload on own using callback
 
@@ -171,7 +171,7 @@ uploader.addFile('fieldName', (stream, filename, encoding, mimetype) => {
 ### uploader.process(req, [validatorContext]) ⇒ <code>Promise.&lt;object&gt;</code>
 Process the uploads
 
-**Kind**: instance method of <code>[Uploader](#Uploader)</code>  
+**Kind**: instance method of <code>[Uploader](#Uploader)</code>
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -181,7 +181,7 @@ Process the uploads
 <a name="Uploader.Uploader"></a>
 
 ### Uploader.Uploader
-**Kind**: static class of <code>[Uploader](#Uploader)</code>  
+**Kind**: static class of <code>[Uploader](#Uploader)</code>
 <a name="new_Uploader.Uploader_new"></a>
 
 #### new Uploader([validator])
@@ -195,8 +195,8 @@ Creates an instance of Uploader.
 <a name="LimitedStream"></a>
 
 ## LimitedStream ⇐ <code>Transform</code>
-**Kind**: global class  
-**Extends:** <code>Transform</code>  
+**Kind**: global class
+**Extends:** <code>Transform</code>
 
 * [LimitedStream](#LimitedStream) ⇐ <code>Transform</code>
     * [new LimitedStream()](#new_LimitedStream_new)
@@ -208,7 +208,7 @@ Creates an instance of Uploader.
 ### new LimitedStream()
 Stream which throws error, when size of stream exceeds allowed length
 
-**Example**  
+**Example**
 ```javascript
 const stream = new LimitedStream({ maxLength: 1024 }); // 1Kb
 stream.on('error', (err) => {
@@ -220,7 +220,7 @@ stream.on('error', (err) => {
 <a name="LimitedStream.LimitedStream"></a>
 
 ### LimitedStream.LimitedStream
-**Kind**: static class of <code>[LimitedStream](#LimitedStream)</code>  
+**Kind**: static class of <code>[LimitedStream](#LimitedStream)</code>
 <a name="new_LimitedStream.LimitedStream_new"></a>
 
 #### new LimitedStream(options)
@@ -237,9 +237,9 @@ Creates an instance of LimitedStream.
 ## terminateStream(readableStream) ⇒ <code>Promise.&lt;Buffer&gt;</code>
 Converts a stream to buffer
 
-**Kind**: global function  
+**Kind**: global function
 
 | Param | Type |
 | --- | --- |
-| readableStream | <code>ReadableStream</code> | 
+| readableStream | <code>ReadableStream</code> |
 
